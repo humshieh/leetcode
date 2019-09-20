@@ -2,7 +2,7 @@ package com.orkva.leetcode.problems
 
 import org.junit.Test
 
-class NAryTreeLevelOrderTraversalTest {
+class No429Test {
 
     @Test fun levelOrder() {
         val root = Node(1, listOf(
@@ -13,7 +13,7 @@ class NAryTreeLevelOrderTraversalTest {
                 Node(3, listOf()),
                 Node(4, listOf())
         ))
-        val instance = NAryTreeLevelOrderTraversal()
+        val instance = No429()
         instance.levelOrder(root).also(::println)
     }
 

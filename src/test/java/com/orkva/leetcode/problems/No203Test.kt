@@ -2,7 +2,7 @@ package com.orkva.leetcode.problems
 
 import org.junit.Test
 
-class RemoveLinkedListElementsTest {
+class No203Test {
 
     @Test fun removeElements() {
         val conditions = listOf(
@@ -14,7 +14,7 @@ class RemoveLinkedListElementsTest {
                 buildConditions(2, 1, 1, 1, 2),
                 buildConditions(1, 1, 1, 1, 1)
         )
-        val instance = RemoveLinkedListElements()
+        val instance = No203()
         for (condition in conditions) {
             instance.removeElements(condition, 1).also(::println)
         }

@@ -6,7 +6,7 @@ package com.orkva.leetcode.problems;
  * @date 2019/09/19 14:20
  * @version Easy
  */
-public class AddDigits {
+public class No258 {
 
     /**
      * Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
@@ -35,4 +35,7 @@ public class AddDigits {
         return num;
     }
 
+    /*
+     * 数根算法 参考 wikipedia
+     */
 }

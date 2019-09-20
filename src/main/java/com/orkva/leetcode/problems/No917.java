@@ -8,7 +8,7 @@ import java.util.Stack;
  * @date 2019/09/19 16:54
  * @version Easy
  */
-public class ReverseOnlyLetters {
+public class No917 {
 
     /**
      * Given a string S, return the "reversed" string where all characters that are not a letter stay in the same place, and all letters reverse their positions.
@@ -55,5 +55,11 @@ public class ReverseOnlyLetters {
 
         return ans.toString();
     }
+
+    /*
+     * 1. 创建栈
+     * 2. 遍历字符串 将字母入栈
+     * 3. 遍历字符串 为字母时出栈 符号时保持不变
+     */
 
 }

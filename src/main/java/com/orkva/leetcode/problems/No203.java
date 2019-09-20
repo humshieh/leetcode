@@ -6,7 +6,7 @@ package com.orkva.leetcode.problems;
  * @date 2019/09/19 16:11
  * @version Easy
  */
-public class RemoveLinkedListElements {
+public class No203 {
 
     /**
      * Remove all elements from a linked list of integers that have value val.
@@ -36,6 +36,12 @@ public class RemoveLinkedListElements {
         return head;
     }
 
+    /*
+     * 1. 循环判断是否首位出现，是则修改 head 指针
+     * 2. 判断修改 head 指针后 head 是否为空
+     * 3. 存储 prev 用以删除节点，point 定位当前节点
+     * 4. 遍历 point
+     */
 }
 class ListNode {
     int val;

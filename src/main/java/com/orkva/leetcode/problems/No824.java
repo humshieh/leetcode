@@ -6,7 +6,7 @@ package com.orkva.leetcode.problems;
  * @date 2019/09/19 11:16
  * @version Easy
  */
-public class GoatLatin {
+public class No824 {
     /**
      * A sentence S is given, composed of words separated by spaces. Each word consists of lowercase and uppercase letters only.
      *
@@ -70,4 +70,9 @@ public class GoatLatin {
         }
         return false;
     }
+
+    /*
+     * 1. 分割单词 遍历
+     * 2. 判断词首是否元音 按规则添加字母
+     */
 }

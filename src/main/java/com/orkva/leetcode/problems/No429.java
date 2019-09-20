@@ -11,7 +11,7 @@ import java.util.List;
  * @date 2019/09/19 14:59
  * @version Easy
  */
-public class NAryTreeLevelOrderTraversal {
+public class No429 {
 
     /**
      * Given an n-ary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
@@ -60,6 +60,14 @@ public class NAryTreeLevelOrderTraversal {
         }
         return result;
     }
+
+    /*
+     * 1. 判断根节点非空
+     * 2. 创建队列用以存储本层节点，初始化为 root
+     * 3. 遍历 deque
+     * 4. 创建内层队列存储单个节点的子节点
+     * 5. 获取本层 val 及下一层遍历的节点
+     */
 
 }
 @SuppressWarnings("all")
