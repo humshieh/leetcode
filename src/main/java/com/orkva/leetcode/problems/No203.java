@@ -1,5 +1,7 @@
 package com.orkva.leetcode.problems;
 
+import com.orkva.leetcode.common.ListNode;
+
 /**
  * 203. Remove Linked List Elements
  *
@@ -42,23 +44,4 @@ public class No203 {
      * 3. 存储 prev 用以删除节点，point 定位当前节点
      * 4. 遍历 point
      */
-}
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
-    ListNode append(ListNode node) {
-        this.next = node;
-        return node;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(val).append(' ');
-        if (next != null) {
-            sb.append(next.toString());
-        }
-        return sb.toString();
-    }
 }

@@ -1,5 +1,6 @@
 package com.orkva.leetcode.problems
 
+import com.orkva.leetcode.common.Node
 import org.junit.Test
 
 class No429Test {

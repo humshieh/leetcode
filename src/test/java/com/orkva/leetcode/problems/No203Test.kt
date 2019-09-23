@@ -1,11 +1,12 @@
 package com.orkva.leetcode.problems
 
+import com.orkva.leetcode.common.ListNode
 import org.junit.Test
 
 class No203Test {
 
     @Test fun removeElements() {
-        val conditions = listOf(
+        val conditions: List<ListNode> = listOf(
                 buildConditions(1, 2, 3, 4, 5),
                 buildConditions(1, 1, 3, 4, 5),
                 buildConditions(1, 2, 1, 4, 5),

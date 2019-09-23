@@ -1,5 +1,7 @@
 package com.orkva.leetcode.problems;
 
+import com.orkva.leetcode.common.Node;
+
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -69,16 +71,4 @@ public class No429 {
      * 5. 获取本层 val 及下一层遍历的节点
      */
 
-}
-@SuppressWarnings("all")
-class Node {
-    public int val;
-    public List<Node> children;
-
-    public Node() {}
-
-    public Node(int val, List<Node> children) {
-        this.val = val;
-        this.children = children;
-    }
 }
