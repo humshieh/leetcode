@@ -50,9 +50,9 @@ public class No450 {
      *     4   7
      */
     public TreeNode deleteNode(TreeNode root, int key) {
-        // TODO: 2019/9/23 17:01 未解 
         TreeNode parent = null;
         TreeNode target = root;
+        // 查找目标节点及其父节点
         while (target != null && target.val != key) {
             parent = target;
             if (target.val > key) {
@@ -62,10 +62,13 @@ public class No450 {
             }
         }
 
+        // 判断是否存在目标节点
         if (target == null) {
             return root;
         }
 
+        // 删除节点左右孩子状况
+        // 无后代情况
         if (target.left == null && target.right == null) {
             if (parent == null) {
                 return null;
@@ -78,45 +81,67 @@ public class No450 {
             return root;
         }
 
-        TreeNode replay = null;
-        if (target.left != null) {
-            TreeNode prev = target;
-            replay = target.left;
-            while (replay.right != null) {
-                prev = replay;
-                replay = replay.right;
+        // 双侧后代情况
+        if (target.left != null && target.right != null) {
+            TreeNode pred = target.left;
+            // 直接前驱长子情况
+            if (pred.right == null) {
+                pred.right = target.right;
+                if (parent == null) {
+                    return pred;
+                }
+                if (parent.left == target) {
+                    parent.left = pred;
+                } else {
+                    parent.right = pred;
+                }
+                return root;
             }
-            if (prev == target) {
-                prev.left = replay.left;
+
+            // 查找直接前驱及前驱父节点
+            TreeNode prev = null;
+            while (pred.right != null) {
+                prev = pred;
+                pred = pred.right;
+            }
+            // 替换节点
+            prev.right = pred.left;
+            pred.left = target.left;
+            pred.right = target.right;
+            // 连接到现在父节点
+            if (parent == null) {
+                return pred;
+            }
+            if (parent.left == target) {
+                parent.left = pred;
             } else {
-                prev.right = null;
+                parent.right = pred;
+            }
+            return root;
+        }
+
+        // 单侧后代情况
+        if (target.left != null) {
+            if (parent == null) {
+                return target.left;
+            }
+            if (parent.left == target) {
+                parent.left = target.left;
+            } else {
+                parent.right = target.left;
             }
         } else {
-            TreeNode prev = target;
-            replay = target.right;
-            while (replay.left != null) {
-                prev = replay;
-                replay = replay.left;
+            if (parent == null) {
+                return target.right;
             }
-            if (prev == target) {
-                prev.right = replay.right;
-            } else {
-                prev.left = null;
-            }
-        }
-
-        replay.left = target.left;
-        replay.right = target.right;
-
-        if (parent != null) {
             if (parent.left == target) {
-                parent.left = replay;
+                parent.left = target.right;
             } else {
-                parent.right = replay;
+                parent.right = target.right;
             }
         }
 
-        return target == root ? replay : root;
+        return root;
     }
 
     /**
