@@ -3,6 +3,7 @@ package com.orkva.leetcode
 import com.orkva.leetcode.common.TreeNode
 import org.junit.Test
 import java.util.*
+import kotlin.random.Random
 
 open class ApplicationTest {
     open lateinit var conditions: List<Pair<Any, Any>>
@@ -33,7 +34,7 @@ open class ApplicationTest {
     }
 
     @Test fun test() {
-        val source = ('0'..'9') + ('a'..'z') + ('A'..'Z')
+
 
     }
 }
